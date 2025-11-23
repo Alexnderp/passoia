@@ -2,14 +2,14 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { CorProvider } from "./context/CorContext";
-import Main from "./pages/Main";
+import Index from "./pages/Index";
 
 function App() {
   return (
     <>
       <CorProvider>
         <Header />
-        <Main />
+        <Index />
         <Footer />
       </CorProvider>
     </>

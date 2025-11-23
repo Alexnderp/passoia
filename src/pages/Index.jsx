@@ -1,7 +1,7 @@
 import  { useState } from "react";
 import { useCor } from "../context/CorContext";
 
-function Main() {
+function Index() {
   const { corAtual, setCorAtual } = useCor();
   const [corSelecionada, setCorSelecionada] = useState("rosa");
   const batons = {
@@ -211,4 +211,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Index;
