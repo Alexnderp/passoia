@@ -1,4 +1,3 @@
-// CorContext.jsx
 import { createContext, useContext, useState } from "react";
 
 const CorContext = createContext();

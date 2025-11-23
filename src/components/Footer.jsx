@@ -1,4 +1,3 @@
-import React from "react";
 import { useCor } from "../context/CorContext";
 
 function Footer() {
