@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useCor } from "../context/CorContext";
 
 function Index() {
@@ -48,7 +48,7 @@ function Index() {
       <section id="intro">
         <img
           class="w-full"
-          src="https://i.ibb.co/Q7nVswBg/f7b3fe0430699c2c8b464182f677b2d79fd95e21.jpg"
+          src="https://i.ibb.co/Q7F7qV24/f7b3fe0430699c2c8b464182f677b2d79fd95e21.jpg"
           alt=""
         />
       </section>
@@ -59,7 +59,7 @@ function Index() {
         <div class="max-w-5xl mx-auto p-2 grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="relative rounded-2xl overflow-hidden group">
             <img
-              src="https://i.ibb.co/7tCdV2x7/b634cb83ab02a94f26210ce4fe4f0aef73f10451.png"
+              src="https://i.ibb.co/1fRT8fL4/b634cb83ab02a94f26210ce4fe4f0aef73f10451.png"
               alt="Lábios"
               class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -74,7 +74,7 @@ function Index() {
           </div>
           <div class="relative rounded-2xl overflow-hidden group">
             <img
-              src="https://i.ibb.co/F4zxxW7w/f5d836eff5d870d5cabe2eda352e54b076c9844d.jpg"
+              src="https://i.ibb.co/MxDmWsNJ/f5d836eff5d870d5cabe2eda352e54b076c9844d.jpg"
               alt="Lábios"
               class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -89,7 +89,7 @@ function Index() {
           </div>
           <div class="relative rounded-2xl overflow-hidden group">
             <img
-              src="https://i.ibb.co/DgbQW91M/0e4f9956e2e1b8a059eb88676ba73b6517cb80de.png"
+              src="https://i.ibb.co/CpzpC6Sp/0e4f9956e2e1b8a059eb88676ba73b6517cb80de.png"
               alt="Lábios"
               class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -104,7 +104,7 @@ function Index() {
           </div>
           <div class="relative rounded-2xl overflow-hidden group">
             <img
-              src="https://i.ibb.co/mFJfFFFQ/ff118e81d337da4d626a1a62a2f0f26681881548.png"
+              src="https://i.ibb.co/tTdN10FF/ff118e81d337da4d626a1a62a2f0f26681881548.png"
               alt="Lábios"
               class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110"
             />
