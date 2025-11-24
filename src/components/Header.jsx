@@ -4,7 +4,6 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Detecta o scroll e adiciona fundo/sombra quando rolar
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -20,7 +19,6 @@ function Header() {
 
   return (
     <>
-      {/* HEADER FIXO NO TOPO */}
       <nav
         className={`
           fixed top-0 left-0 right-0 z-40
@@ -33,7 +31,6 @@ function Header() {
         `}
       >
         <div className="flex justify-between items-center px-5 max-w-7xl mx-auto">
-          {/* Logo */}
           <a href="#">
             <img
               className="w-32 md:w-40 transition-all duration-300"
@@ -42,7 +39,6 @@ function Header() {
             />
           </a>
 
-          {/* Menu Desktop */}
           <div className="hidden md:flex items-center">
             <ul className="flex gap-2">
               {["looks", "lancamentos", "novidades"].map((item) => (
@@ -61,7 +57,6 @@ function Header() {
         </div>
       </nav>
 
-      {/* Botão Hambúrguer (Mobile) */}
       <button
         onClick={toggleMenu}
         className={`
@@ -91,7 +86,6 @@ function Header() {
         </div>
       </button>
 
-      {/* Overlay (quando menu mobile aberto) */}
       <div
         className={`fixed inset-0 bg-black/50 transition-opacity duration-300 z-50 md:hidden ${
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -99,7 +93,6 @@ function Header() {
         onClick={toggleMenu}
       />
 
-      {/* Menu Lateral Mobile */}
       <div
         className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transition-transform duration-500 ease-out z-50 md:hidden ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
