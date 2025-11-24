@@ -22,7 +22,7 @@ function Footer() {
         </ul>
         <div>
           <span class="font-bold">FORMAS DE PAGAMENTO</span>
-          <div class="grid grid-cols-3 mt-2">
+          <div class="flex justify-center items-center gap-8 mt-4 flex-wrap">
             <img
               class="w-[2rem]"
               src="https://i.ibb.co/60tc1z7L/mastercard.png"
@@ -47,11 +47,14 @@ function Footer() {
         </div>
         <div>
           <span class="font-bold">SIGA-NOS NAS REDES SOCIAIS</span>
-          <div style={{ color: corAtual }} class="flex gap-3 m-2 justify-center ">
+          <div
+            style={{ color: corAtual }}
+            class="flex gap-3 m-2 justify-center "
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="24"
+              height="24"
               fill="currentColor"
               class="bi bi-instagram"
               viewBox="0 0 16 16"
@@ -60,8 +63,8 @@ function Footer() {
             </svg>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="24"
+              height="24"
               fill="currentColor"
               class="bi bi-facebook"
               viewBox="0 0 16 16"
@@ -70,8 +73,8 @@ function Footer() {
             </svg>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="24"
+              height="24"
               fill="currentColor"
               class="bi bi-youtube"
               viewBox="0 0 16 16"
@@ -80,8 +83,8 @@ function Footer() {
             </svg>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="24"
+              height="24"
               fill="currentColor"
               class="bi bi-twitter-x"
               viewBox="0 0 16 16"

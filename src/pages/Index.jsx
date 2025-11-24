@@ -4,6 +4,12 @@ import { useCor } from "../context/CorContext";
 function Index() {
   const { corAtual, setCorAtual } = useCor();
   const [corSelecionada, setCorSelecionada] = useState("rosa");
+  const ringClasses = {
+    roxo: "ring-[#906276]",
+    vermelho: "ring-[#B42B3C]",
+    marrom: "ring-[#48312E]",
+    rosa: "ring-[#DD5C86]",
+  };
   const batons = {
     roxo: {
       imagem:
@@ -53,10 +59,10 @@ function Index() {
         />
       </section>
       <section id="looks" class="text-center mt-1">
-        <h2 class="text-xl md:text-5xl font-bold mb-10 text-gray-800">
+        <h2 class="text-xl md:text-3xl font-bold mb-10 text-gray-800">
           LOOKS E DICAS DE MAQUIAGEM
         </h2>
-        <div class="max-w-5xl mx-auto p-2 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="max-w-5xl mx-auto md:max-w-7xl p-2 grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="relative rounded-2xl overflow-hidden group">
             <img
               src="https://i.ibb.co/1fRT8fL4/b634cb83ab02a94f26210ce4fe4f0aef73f10451.png"
@@ -67,7 +73,7 @@ function Index() {
             <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-60 transition-opacity"></div>
 
             <div class="absolute inset-0 m-3 flex items-end justify-start">
-              <h3 class="text-white text-3xl md:text-4xl font-bold tracking-wider drop-shadow-2xl">
+              <h3 class="text-white text-2xl md:text-4xl font-bold tracking-wider drop-shadow-2xl">
                 Lábios
               </h3>
             </div>
@@ -82,7 +88,7 @@ function Index() {
             <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-60 transition-opacity"></div>
 
             <div class="absolute inset-0 m-3 flex items-end justify-start">
-              <h3 class="text-white text-3xl md:text-4xl font-bold tracking-wider drop-shadow-2xl">
+              <h3 class="text-white text-2xl md:text-4xl font-bold tracking-wider drop-shadow-2xl">
                 Olhos
               </h3>
             </div>
@@ -97,7 +103,7 @@ function Index() {
             <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-60 transition-opacity"></div>
 
             <div class="absolute inset-0 m-3 flex items-end justify-start">
-              <h3 class="text-white text-3xl md:text-4xl font-bold tracking-wider drop-shadow-2xl">
+              <h3 class="text-white text-2xl md:text-4xl font-bold tracking-wider drop-shadow-2xl">
                 Rosto
               </h3>
             </div>
@@ -112,97 +118,113 @@ function Index() {
             <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-60 transition-opacity"></div>
 
             <div class="absolute inset-0 m-3 flex items-end justify-start">
-              <h3 class="text-white text-3xl md:text-4xl font-bold tracking-wider drop-shadow-2xl">
+              <h3 class="text-white text-2xl md:text-4xl font-bold tracking-wider drop-shadow-2xl">
                 Tendência
               </h3>
             </div>
           </div>
         </div>
       </section>
-      <section id="lancamentos" class="py-16 text-center">
-        <h2 class="text-xl md:text-5xl font-bold mb-10 text-gray-800">
+      <section id="lancamentos" className="py-16 text-center">
+        <h2 className="text-xl md:text-3xl font-bold mb-10 text-gray-800">
           APROVEITE OS LANÇAMENTOS
         </h2>
 
-        <div class="max-w-md mx-auto">
-          <img
-            src={atual.imagem}
-            alt={` ${atual.nomeCor}`}
-            class="w-72 mx-auto rounded-2xl shadow-2xl transition-all duration-700 ease-in-out"
-          />
-
-          <div class="flex justify-center gap-1 my-6">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} class="w-7 h-7 fill-yellow-400" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
+        <div className="max-w-4xl mx-auto md:flex md:gap-8 items-start">
+          <div className="hidden md:flex md:flex-col gap-4">
+            {[
+              {
+                chave: "rosa",
+                preview:
+                  "https://i.ibb.co/Rpdg1VzW/b969efde83eefd19eda0d31bc1bab98fd529f84a.png",
+              },
+              {
+                chave: "vermelho",
+                preview:
+                  "https://i.ibb.co/rRBwKrRB/8106d59df4af7806b7f2076c8a0d42041feae248.png",
+              },
+              {
+                chave: "roxo",
+                preview:
+                  "https://i.ibb.co/rfvN0Hdw/0dd2f75b65099f72591259236eeab9a854c25055.png",
+              },
+              {
+                chave: "marrom",
+                preview:
+                  "https://i.ibb.co/Kc24Zw64/1014ce69b39da574cc5eb9c02d4ceb10e29ab29c.png",
+              },
+            ].map(({ chave, preview }) => (
+              <img
+                onClick={() => trocarCor(chave)}
+                src={preview}
+                alt={`Preview ${chave}`}
+                className={`w-22 rounded-xl border-4 border-white shadow-xl cursor-pointer
+          hover:scale-110 hover:-translate-y-2 transition duration-300
+          ring-4 ${
+            corSelecionada === chave
+              ? `${ringClasses[chave]} shadow-2xl`
+              : "ring-transparent"
+          }`}
+              />
             ))}
           </div>
 
-          <h3 class="text-3xl font-bold text-gray-800 mb-2">
-            <span style={{ color: atual.cor }}>{atual.nomeCor}</span>
-          </h3>
-          <p class="text-gray-600 text-lg leading-relaxed max-w-xs mx-auto mb-8 italic">
-            {atual.descricao}
-          </p>
+          <img
+            src={atual.imagem}
+            alt={atual.nomeCor}
+            className="w-80 md:w-96 mx-auto rounded-3xl shadow-2xl transition-all duration-700 ease-in-out"
+          />
 
-          <div class="flex justify-center gap-7">
-            <button
-              onClick={() => trocarCor("rosa")}
-              class={`w-14 h-14 bg-[#DD5C86] rounded-full border-4 border-white shadow-xl 
-                hover:scale-125 hover:-translate-y-3 transition duration-300 
-                ring-4 ${
-                  corSelecionada === "rosa"
-                    ? "ring-pink-400 shadow-2xl scale-110"
-                    : "ring-transparent"
-                }`}
-              aria-label="Rose Kiss"
-            />
+          <div className="mt-8 md:mt-0 md:flex-1 text-center md:text-left">
+            <div className="flex justify-center md:justify-start gap-1 my-6">
+              {[...Array(5)].map((_, i) => (
+                <svg
+                  key={i}
+                  className="w-7 h-7 fill-yellow-400"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+              ))}
+            </div>
 
-            <button
-              onClick={() => trocarCor("vermelho")}
-              class={`w-14 h-14 bg-[#B42B3C] rounded-full border-4 border-white shadow-xl 
-                hover:scale-125 hover:-translate-y-3 transition duration-300 
-                ring-4 ${
-                  corSelecionada === "vermelho"
-                    ? "ring-red-500 shadow-2xl scale-110"
-                    : "ring-transparent"
-                }`}
-              aria-label="Red Fire"
-            />
+            <h3 className="text-3xl font-bold text-gray-800 mb-3">
+              <span style={{ color: atual.cor }}>{atual.nomeCor}</span>
+            </h3>
+            <p className="text-gray-600 text-lg leading-relaxed max-w-sm mx-auto md:mx-0 mb-10 italic">
+              {atual.descricao}
+            </p>
 
-            <button
-              onClick={() => trocarCor("roxo")}
-              class={`w-14 h-14 bg-[#906276] rounded-full border-4 border-white shadow-xl 
-                hover:scale-125 hover:-translate-y-3 transition duration-300 
-                ring-4 ${
-                  corSelecionada === "roxo"
-                    ? "ring-purple-500 shadow-2xl scale-110"
-                    : "ring-transparent"
-                }`}
-              aria-label="Violet Dream"
-            />
-
-            <button
-              onClick={() => trocarCor("marrom")}
-              class={`w-14 h-14 bg-[#48312E] rounded-full border-4 border-white shadow-xl 
-                hover:scale-125 hover:-translate-y-3 transition duration-300 
-                ring-4 ${
-                  corSelecionada === "marrom"
-                    ? "ring-amber-950 shadow-2xl scale-110"
-                    : "ring-transparent"
-                }`}
-              aria-label="Chocolate Nude"
-            />
+            <div className="flex justify-center gap-6">
+              {["rosa", "vermelho", "roxo", "marrom"].map((chave) => (
+                <button
+                  key={chave}
+                  onClick={() => trocarCor(chave)}
+                  className={`
+              w-14 h-14 rounded-full border-4 border-white shadow-xl
+              transition-all duration-300 hover:scale-125 hover:-translate-y-4
+              ring-3 ${
+                corSelecionada === chave
+                  ? `${ringClasses[chave]} shadow-2xl scale-110`
+                  : "ring-transparent"
+              }
+            `}
+                  style={{
+                    backgroundColor: batons[chave].cor,
+                  }}
+                  aria-label={batons[chave].nomeCor}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
       <section id="novidades" class="py-16 text-center">
-        <h2 class="text-xl md:text-5xl font-bold mb-10 text-gray-800">
+        <h2 class="text-xl md:text-3xl font-bold mb-10 text-gray-800">
           NOVIDADADES PARA VOCÊ
         </h2>
         <img
-          class="w-[24rem] m-auto"
+          class="w-[24rem] m-auto md:w-full md:p-4"
           src="https://i.ibb.co/TBD9bkQ8/69c732a3b2946f5938eb1dfae44cebb4dd69d4b2.jpg"
           alt=""
         />
